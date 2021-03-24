@@ -52,4 +52,14 @@ To operate on the associated times of a file, use the command **touch**, and tak
 * -r: to get values from another file.
 
 ## 1.2.2 The architecture of a filesystem and the properties of files
+The structure that uniquely identifies a single file within the filesystem is the so-called inode: each file is associated with an inode in which all the information concerning it is kept (the information that ls provides comes from the inode), the only information not contained is the name of the file.
+
+You can have multiple entries in different directories pointing to the same inode. This introduces the concept of **Hard Link** (direct link): two files pointing to the same inode are actually the same file, no specific property allows them to be distinguished, as access for both is through the same inode.
+
+Since the same inode can be referenced in multiple directories, a file can have multiple names, even completely unrelated to each other. For this reason each inode keeps a counter that indicates the reference number that has been made to it (**link count**), it is reported in the second column of the **ls -l** command.
+
+The generic command to create a link is **ln** (**l**i**n**k), and it takes as arguments the original file and the name of the new link. In UNIX systems, links are of two types:
+* Hard Link: those just illustrated;
+* Symbolic Link: which are the most similar to Windows shortcuts. A limitation of Hard Links is that you can only refer to an inode present in the same filesystem as the directory. To overcome this limitation, symbolic links have been created, which are created with the **ln** command using the **-s** option (the link will have a different inode than the original file).
+
 WORK IN PROGRESS
