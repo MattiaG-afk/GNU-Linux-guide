@@ -1,5 +1,5 @@
-# 1 System architecture
-## 1.1 The basic architecture
+# 1.1 System architecture
+## 1.1.1 The basic architecture
 The GNU / Linux system was born, like all UNIX systems, to be multitasking and multiuser.
 
 The architecture of the GNU/Linux system, like all UNIX system, is based in the separation between:
@@ -22,9 +22,11 @@ A second part, the **VM** (or **Virtual Memory**), deals with managing the use o
 The last part of the kernel, the **drivers**, is a set of modules that allow the management of various peripherals, providing access for programs.
 
 The consequence of the division between user and kernel space is that in this way it is not possible for a single program to disturb the action of another program or of the kernel itself.
-## 1.2 The functioning of the system
-Upon power-up, a BIOS program is executed which, after checks, performs the system boot procedure. PCs are loaded with the bootloader, which in turn retrieves a kernel image from the disk, which is loaded into memory. Once the kernel is loaded, it scans for available devices, reads the disk partition tables, mounts the filesystem on which the root directory is located, and the first process will start. Traditionally this process is called init, and it is the program that takes care of starting all the processes that allow you to use the system.
+## 1.1.2 The functioning of the system
+Upon power-up, a BIOS program is executed which, after checks, performs the system boot procedure. PCs are loaded with the **bootloader**, which in turn retrieves a kernel image from the disk, which is loaded into memory. Once the kernel is loaded, it scans for available devices, reads the disk partition tables, mounts the filesystem on which the root directory is located, and the first process will start. Traditionally this process is called **init**, and it is the program that takes care of starting all the processes that allow you to use the system.
 
 The main group of programs outside the kernel derive from the Free Software Foundation's GNU project.
 
-Although all programs are treated equally by the kernel, not all of them are equally important (see init). This leads to another characteristic which is that a process can in turn launch new ones, whereby it is said that the first process is the father of the others, who are called children.
+Although all programs are treated equally by the kernel, not all of them are equally important (see init). This leads to another characteristic which is that a process can in turn launch new ones, whereby it is said that the first process is the **father** of the others, who are called **children**.
+## 1.1.3 Some linux specific features
+WORK IN PROGRESS
