@@ -45,4 +45,11 @@ Other options of the **ls** command are:
 * -u: use the last access time to the file;
 * -d: it only displays the name and not the content when referring to a directory, and does not execute symbolic links.
 
+To operate on the associated times of a file, use the command **touch**, and takes various options:
+* -a: change the last access time;
+* -m: change the time of last modification;
+* -d: to specify a date;
+* -r: to get values from another file.
+
+## 1.2.2 The architecture of a filesystem and the properties of files
 WORK IN PROGRESS
