@@ -29,4 +29,13 @@ The main group of programs outside the kernel derive from the Free Software Foun
 
 Although all programs are treated equally by the kernel, not all of them are equally important (see init). This leads to another characteristic which is that a process can in turn launch new ones, whereby it is said that the first process is the **father** of the others, who are called **children**.
 ## 1.1.3 Some linux specific features
-WORK IN PROGRESS
+Although Linux is the most popular, there are other UNIX-like operating systems (BSD, Solaris, IRIX, etc ...) that are inserted into two main branches, those derived from:
+* AT/T: called **SysV**;
+* Berkeley: called **BSD**.
+Linux does not belong to either of these two branches, as it has been rewritten from scratch.
+
+Another feature of Linux is that of being **modular**, it can therefore be extended to the system additional pieces (**modules**) that allow you to expand the system.
+
+A third peculiarity of Linux is that of the **Virtual File System** (or **VFS**), which is that the disk space on which the data files are kept is organized in what is called a **filesystem**. The raw disk space is normally divided into contiguous sectors of fixed size, but within the system this is organized in such a way as to allow the immediate retrieval of the information stored on these sectors, even when these are scattered here and there on the disk. ; this results in what the user sees as a single file.
+
+What distinguishes Linux is that the interface for reading the contents of a filesystem has been completely virtualized, so by inserting special modules into the system it becomes possible to access different types of filesystems with the same interface.
