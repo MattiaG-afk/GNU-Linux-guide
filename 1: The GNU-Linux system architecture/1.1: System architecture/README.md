@@ -32,6 +32,7 @@ Although all programs are treated equally by the kernel, not all of them are equ
 Although Linux is the most popular, there are other UNIX-like operating systems (BSD, Solaris, IRIX, etc ...) that are inserted into two main branches, those derived from:
 * AT/T: called **SysV**;
 * Berkeley: called **BSD**.
+
 Linux does not belong to either of these two branches, as it has been rewritten from scratch.
 
 Another feature of Linux is that of being **modular**, it can therefore be extended to the system additional pieces (**modules**) that allow you to expand the system.
