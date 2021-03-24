@@ -13,4 +13,5 @@ These are:
 * Block device: a file that identifies a block access device. It is indicated with "b";
 * Fifo or pipe: a special file that identifies a one-way communication line. It is indicated with "p";
 * Socket: a special file that identifies a two-way communication line. It is indicated with "s".
+
 WORK IN PROGRESS
