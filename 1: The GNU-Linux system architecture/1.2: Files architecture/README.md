@@ -72,4 +72,14 @@ A second feature of symbolic links is that they can also create links for direct
 
 The command to remove files is **rm** (**r**e**m**ove file), but the function to delete in link is actually **unlink**.
 
-WORK IN PROGRESS
+Only when the number of references of an inode is canceled, is the data in the file actually removed from the kernel disk. In case a process is using the file at the time of removal, the disk space will not be released, and as long as the process has not finished the data will remain, even if only for it, available.
+
+This statement is partially true, as with the deletion the data of a file are not touched, only the space occupied by them is declared available. You need to use **shred** to work around this as, in addition to deleting the reference, it overwrites the file data.
+
+The **rm** command takes as arguments the list of files to be deleted, used with the option:
+* -i: confirmation is requested;
+* -f: it cancels any previous -i and no errors are printed for non-existent files;
+* -r (or -R): allows the recursive deletion of a directory and all its contents, is to be used with caution (especially when combined with -f).
+
+The command used for moving files is **mv** (**m**o**v**e file).
+
