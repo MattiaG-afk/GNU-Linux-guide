@@ -62,4 +62,14 @@ The generic command to create a link is **ln** (**l**i**n**k), and it takes as a
 * Hard Link: those just illustrated;
 * Symbolic Link: which are the most similar to Windows shortcuts. A limitation of Hard Links is that you can only refer to an inode present in the same filesystem as the directory. To overcome this limitation, symbolic links have been created, which are created with the **ln** command using the **-s** option (the link will have a different inode than the original file).
 
+Other options of the **ln** command:
+* -f: forces overwriting of the new file if it already exists;
+* -i: requests confirmation in case of overwriting;
+* -d: create a hard link to a directory (not usable in Linux);
+* -b: backs up the destination if it already exists.
+
+A second feature of symbolic links is that they can also create links for directories and, if you delete the link, the file will not be deleted (unlike hard links).
+
+The command to remove files is **rm** (**r**e**m**ove file), but the function to delete in link is actually **unlink**.
+
 WORK IN PROGRESS
