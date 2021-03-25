@@ -83,3 +83,29 @@ The **rm** command takes as arguments the list of files to be deleted, used with
 
 The command used for moving files is **mv** (**m**o**v**e file).
 
+If the file is moved without changing the filesystem, there is no need to move the contents of the file and just create a new entry for the inode in question by removing the old one.
+
+When you have to move to a different filesystem it becomes necessary to copy the contents first and then delete the original (you will have to deal with a different inode).
+
+The **mv** command has two forms, it can take as arguments a list of files followed by a directory, to move all the files within the directory, or two files (or two directories), to rename the first to the second. The main options are:
+* -i: requires confirmation in case of overwriting;
+* -f: force overwrite if file already exists;
+* -u: moves only if the destination is older than the source (or does not exist);
+* -b: backs up the destination if it already exists.
+
+If the move occurs within the same filesystem, the times of the file are not changed.
+
+When you want to duplicate a file, the command to use is **cp** (**c**o**p**y file). Like **mv** the command can take a list of files followed by a directory, to copy the list of files into the directory, or two files (or directories), to copy the first to the second. The main options are:
+* -f: force overwrite the destination if it already exists;
+* -i: requires confirmation in case of overwriting;
+* -p: preserve the times, permissions and owners of the file (otherwise it modifies them);
+* -l: create hard links instead of copies;
+* -s: create symbolic links instead of copies;
+* -d: copy the symbolic link instead of the file indicated by it;
+* -r: recursively copies all the contents of a directory;
+* -a: combine options -dpr;
+* -L: always follows symbolic links;
+* -b: backs up the destination if it already exists;
+* -u: copy only if the destination is older than the source (or does not exist).
+
+WORK IN PROGRESS
