@@ -108,4 +108,23 @@ When you want to duplicate a file, the command to use is **cp** (**c**o**p**y fi
 * -b: backs up the destination if it already exists;
 * -u: copy only if the destination is older than the source (or does not exist).
 
+The convention used in all UNIX-like systems is that file names are indicated with a pathname or path, which is the path that must be taken in the tree to reach files through directories, where the directory names are separated from each other with "/".
+
+The path can be indicated in the following way:
+* Absolute: ie starting from the root directory, so the pathname will start with **/**;
+* Relative: therefore starting from the current working directory.
+
+The working directory can be changed with the **cd** (**c**hange **d**irectory) command followed by the directory pathname. To find out what the current working directory is, use the **pwd** (**p**rint **w**orking **d**irectory) command.
+
+Each directory will always contain at least two directories:
+* .: which refers to itself;
+* ..: which refers to the directory in which the current one is contained.
+
+Since the name starts with '.' they are invisible.
+
+The command for creating directories is **mkdir** (**m**a**k**e **dir**ectory) with argument a list of directories. To create all directories that do not exist within the pathname use the **-p** option, you can also set permissions with the **-m** option.
+
+To remove directories, use the **rmdir** (**r**e**m**ove **dir**ectory) command with argument the list of empty directories to be removed. If the directories are not empty the command fails. With the **-p** option you delete the entire path of the directories (which must be empty).
+
+## 1.2.3 Filesystem Hierarcy Standard
 WORK IN PROGRESS
