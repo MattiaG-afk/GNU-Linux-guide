@@ -158,5 +158,12 @@ The standard stipulates that there must be subdirectories of / which are:
      * sbin: it contains the programs for the management of the system for the use of the administrator not essential to the start
      * share: it contains a hierarchy in which all files and data that do not depend on the hardware architecture are organized: the **man** (for man page) and **misc** directories are always required; if installed you can also find a series of directories such as: **dict** (for dictionaries), **doc** (for documentation), **games** (for the static data of the games), **info** (for the files of the relative help system), **terminfo** (for the database with database information) and **zoneinfo** (for time zone data). Anything not classified in the other optional directories must be placed in **misc**;
      * src: its use is optional and contains the package sources for reference;
-* /var: **WORK IN PROGRESS**
-
+* /var: contains variable files, spool directories, log files, transient and temporary data, so that **/usr** can be mounted read-only. It is preferable to mount it on a separate filesystem and some directories cannot be shared. Also in this case the files are organized in a further standardized hierarchy which foresees the presence of the following subdirectories:
+     * cache: contains support and temporary storage data for applications;
+     * lib: contains status information and application data;
+     * local: contains variable data relating to packages in **/usr/local**;
+     * lock: contains lock files, if used **/run** is a symbolic link to **/run/lock**;
+     * log: contains application log files;
+     * opt: contains variable files for packages in **/opt**;
+     * spool: contains directories for queues containing application transit data (print jobs, e-mails, etc ...)
+     * tmp: contains temporary files not deleted when the system is restarted.
