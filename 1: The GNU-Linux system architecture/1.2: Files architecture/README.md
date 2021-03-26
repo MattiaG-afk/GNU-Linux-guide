@@ -151,12 +151,12 @@ The standard stipulates that there must be subdirectories of / which are:
 * /srv: it was introduced to keep the data relating to the various services that may have been installed on a machine (such as the pages served by a webserver) that were previously installed directly under **/var**. A further subdivision is not defined, but generally we tend to create a subdirectory for each service;
 * /tmp: it is used to keep temporary files. It is cleared on each reboot, and programs do not have to assume that files are kept between two successive runs;
 * /usr: is the root directory that contains all programs, files and non-variable data, which can also be shared among multiple workstations. It can be mounted on a separate filesystem from / and can be mounted read-only, although this choice may make it difficult to use some environments. It provides a further directory hierarchy in which the various files must be organized; the standard requires the following subdirectories: 
-     * bin: 
-     * include: 
-     * lib: 
-     * local: 
-     * sbin: 
-     * share:
-     * src: 
-* /var: **WORK IN PROGGRESS**
+     * bin: contains user-used programs installed directly from the system (or from the original distribution). It cannot be shared further;
+     * include: contains all library function declaration files used by the compiler and by C and C++ programs;
+     * lib: contains the libraries, object and binary files related to the **/bin** and **/sbin** programs. It can contain subdirectories with all files relating to individual programs;
+     * local: contains a replica of the **/usr** hierarchy dedicated to files installed locally by the administrator. Generally, programs compiled from source and everything that is not part of the official distribution are installed here;
+     * sbin: it contains the programs for the management of the system for the use of the administrator not essential to the start
+     * share: it contains a hierarchy in which all files and data that do not depend on the hardware architecture are organized: the **man** (for man page) and **misc** directories are always required; if installed you can also find a series of directories such as: **dict** (for dictionaries), **doc** (for documentation), **games** (for the static data of the games), **info** (for the files of the relative help system), **terminfo** (for the database with database information) and **zoneinfo** (for time zone data). Anything not classified in the other optional directories must be placed in **misc**;
+     * src: its use is optional and contains the package sources for reference;
+* /var: **WORK IN PROGRESS**
 
