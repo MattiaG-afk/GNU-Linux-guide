@@ -150,6 +150,13 @@ The standard stipulates that there must be subdirectories of / which are:
 * /sbin: contains essential programs for use by the system administrator (such as init and fsck). It must be on the root filesystem. Only the essential programs for booting the system, recovering and maintaining the filesystem should be placed in this directory;
 * /srv: it was introduced to keep the data relating to the various services that may have been installed on a machine (such as the pages served by a webserver) that were previously installed directly under **/var**. A further subdivision is not defined, but generally we tend to create a subdirectory for each service;
 * /tmp: it is used to keep temporary files. It is cleared on each reboot, and programs do not have to assume that files are kept between two successive runs;
-* /usr: **WORK IN PROGGRESS**
+* /usr: is the root directory that contains all programs, files and non-variable data, which can also be shared among multiple workstations. It can be mounted on a separate filesystem from / and can be mounted read-only, although this choice may make it difficult to use some environments. It provides a further directory hierarchy in which the various files must be organized; the standard requires the following subdirectories: 
+     * bin: 
+     * include: 
+     * lib: 
+     * local: 
+     * sbin: 
+     * share:
+     * src: 
 * /var: **WORK IN PROGGRESS**
 
