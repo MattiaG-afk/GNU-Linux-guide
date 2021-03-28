@@ -26,3 +26,42 @@ The output of the **ps** command is divided into columns:
 * TIME: indicates the CPU time used so far by the process
 * COMMAND: reports the command line used to launch the program.
 
+When the name of the command is in square brackets and has a very low PID it is the processes inside the kernel used by it for the management of some tasks, the notation indicates that the processes do not use memory in USERSPACE. The other letters associated with the STAT field are "<", "N" and "L" and indicate a higher or lower priority than the standard one and the presence of locked memory pages.
+
+The **ps** options are many, but the most important are:
+* u: print a list of the most relevant settings regarding the user who launched the program;
+* r: print information relating to the use of virtual memory;
+* s: print information on signals;
+* o: allows the user to specify his own format;
+* -e: allows you to select all the processes present;
+* -f: allows you to have a list with more information.
+
+The output of the **ps -ef** command is more complete, add the columns:
+* UID: which is the first column, it reports a username;
+* PPID: which is the third column, indicates the parent process ID. This column allows, in the case of zombies, to identify the person responsible for their production;
+* C: which is the fourth column, it indicates the average value, expressed as an integer, of the percentage of CPU utilization over the entire life of the process;
+* STIME: which is the fifth column, it indicates the moment in which the command was launched.
+
+The main properties of the processes and the name of the relative column in the display performed by **ps** are:
+* PID: print the process ID;
+* PPID: print the father's process ID;
+* UID: print the effective user ID of the process;
+* GID: print the effective group ID of the process;
+* CMD: print the command line with which the process was launched;
+* STAT: print process status;
+* NI: print the nice value of the process;
+* TTY: print process control terminal;
+* SID: print the session ID of the process;
+* PGID: print the process group ID of the process;
+* %CPU: print the percentage of the CPU time used compared to the real time of execution;
+* %MEM: prints the percentage of physical memory used by the process;
+* C: print the percentage of CPU on the average of the process life;
+* START: print the start time of the process;
+* TIME: print the total CPU time used by the process;
+* USER: print the effective user of the process;
+* RUSER: print the real user ID;
+* GROUP: print the effective group ID of the process;
+* RGROUP: print the real group ID of the process;
+* COMMAND: prints the command line with which the process started.
+
+WORK IN PROGRESS
