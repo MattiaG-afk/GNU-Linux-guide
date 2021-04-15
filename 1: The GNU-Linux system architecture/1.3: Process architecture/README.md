@@ -72,4 +72,31 @@ The **ps** command, however, only prints the processes at the time of its execut
 * -d: is used to set the interval between updates (default: 1 second), requires ss.dd as parameter (where s are the seconds and d the tenths of a second);
 * -p: it allows to observe a list of processes chosen by the user, who must specify it through a list of PIDs.
 
+Five lines of system information are printed at the top:
+* First line: the time, the uptime, the number of users and the average load of the machine are reported;
+* Second line: statistics on the total of processes are reported;
+* Third line: CPU usage statistics are reported;
+* Fourth line: RAM usage statistics are reported;
+* Fifth line: SWAP usage statistics are shown.
+
+These are followed, after an empty line, by the information on the processes, sorted by decreasing CPU usage. The properties listed are:
+* %CPU: print the percentage of CPU usage since the last screen update;
+* %MEM: prints the percentage of memory usage by the process;
+* CODE: prints the amount of physical memory used by the process for its executable code;
+* DATA: prints the amount of physical memory used by the process for its data;
+* RES: print the amount of physical memory used by the process (DATA + CODE);
+* S: print the status of the process (similar to the STAT of **ps**);
+* SHR: prints the amount of shared memory, represents the memory potentially shareable with other processes;
+* SWAP: prints the amount of virtual memory of a process present in the SWAP;
+* TIME+: prints the CPU time used by the start (similar to the TIME of **ps**) but gradually up to the hundredth of a second;
+* VIRT: prints the total amount of virtual memory used by the process; it includes all code, data and shared libraries plus the pages that have been put into the SWAP (SWAP + REF).
+
+If the top command is started in interactive mode, it is possible to send keyboard commands:
+* K: to send a signal (default SIGTERM);
+* R: to change the priority of a process;
+* U: to select a user's processes;
+* C: you can alternate between printing the command name and the complete line
+* O: to change the update period;
+* H: to print all available commands.
+
 WORK IN PROGRESS
