@@ -64,4 +64,12 @@ The main properties of the processes and the name of the relative column in the 
 * RGROUP: print the real group ID of the process;
 * COMMAND: prints the command line with which the process started.
 
+Each process has a working directory against which it resolves relative pathnames, this characteristic is inherited in the creation of a child process. In addition to the current working directory, the process also keeps an indication of the directory it considers root, against which it resolves absolute pathnames. This directory can be changed with a **system call** (called a **chroot**) thus causing the process to be somewhat restricted within a part of the file tree.
+
+The **ps** command, however, only prints the processes at the time of its execution, to keep the system activity under control, the **top** command is used. The command normally operates in interactive mode, however it can be launched with the options:
+* -b: which runs it in batch mode, allowing output redirection;
+* -n: it is used to specify the number of desired iterations;
+* -d: is used to set the interval between updates (default: 1 second), requires ss.dd as parameter (where s are the seconds and d the tenths of a second);
+* -p: it allows to observe a list of processes chosen by the user, who must specify it through a list of PIDs.
+
 WORK IN PROGRESS
