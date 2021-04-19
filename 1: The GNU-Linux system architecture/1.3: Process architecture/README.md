@@ -8,6 +8,7 @@ A second difference compared to other multi-user systems is that in Linux the cr
  
 This feature also allows you to write a single program that executes multiple processes, with a structure in which the father executes the part that takes care of receiving requests, and for each of them he has a specially created child perform the operations necessary to provide their responses.
  
+## 1.3.2 The properties of the processes
 The command that allows you to get the list of active processes in the system is **ps** (**p**rocess **s**tatus), with the option:
 * a: processes launched by other users will also be displayed, as long as they refer to a terminal;
 * x: all processes not associated with a terminal are displayed;
@@ -99,4 +100,15 @@ If the top command is started in interactive mode, it is possible to send keyboa
 * O: to change the update period;
 * H: to print all available commands.
 
+The initial lines shown with **top** can be obtained separately with the **free** command, which shows a general summary of the system's memory usage. The first line reports the use of physical memory, while the last one of the SWAP. The central row tells us how much memory is occupied or free from the point of view of applications, so the sum of the buffers and cached columns is subtracted and added to the value of the used and free columns in the first row.
+
+In general, the free RAM is always low, as it makes no sense to leave the RAM unused, so it is used by the kernel buffers (to manage data transfer more effectively) and to keep temporary data. As options accept:
+* -b, -k, -m: to print data in bytes, kilobytes (default) and megabytes;
+* -s: to print the statistics after a certain period of time.
+
+If you want to find the PID of a certain program, you can use **pidof**. The command takes as argument a list of program names whose PID you want to know, it can take as options:
+* -s: in the case of several processes corresponding to the same program, to print a single PID;
+* -o: to omit a PID.
+
+## 1.3.3 The signals
 WORK IN PROGRESS
