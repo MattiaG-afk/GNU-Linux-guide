@@ -111,4 +111,10 @@ If you want to find the PID of a certain program, you can use **pidof**. The com
 * -o: to omit a PID.
 
 ## 1.3.3 The signals
+Although the processes use separate and independent entities, there are many cases in which a form of communication is necessary. This communication is given by **signals**, which are also used by the kernel. The signal is a kind of warning that does not contain any information, they can be sent through the **kill** command. Running the **kill -l** command shows all 31 signals used. 
+
+Most of the signals (except **SIGKILL** and **SIGSTOP**) can be intercepted by the process, which can perform an appropriate function when they arrive. If the signal is not intercepted, a default action is performed which is specific to each of them (in most cases it consists in terminating the program). This can happen in two ways:
+* Simple exit;
+* Exit with copy: a directory is created, of a **core** file that contains a copy of its memory space (and for this reason it is called **core dump**) which can be used for further analysis to see where the interruption occurred.
+
 WORK IN PROGRESS
