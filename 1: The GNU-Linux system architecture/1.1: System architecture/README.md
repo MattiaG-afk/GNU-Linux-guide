@@ -1,6 +1,6 @@
 # 1.1 System architecture
 ## 1.1.1 The basic architecture
-The GNU / Linux system was born, like all UNIX systems, to be multitasking and multiuser.
+The GNU/Linux system was born, like all UNIX systems, to be multitasking and multiuser.
 
 The architecture of the GNU/Linux system, like all UNIX system, is based in the separation between:
 * Kernel: that is the nucleus of the system, to which hardware resource management is required (CPU, memory, peripherals);
