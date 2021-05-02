@@ -117,4 +117,20 @@ Most of the signals (except **SIGKILL** and **SIGSTOP**) can be intercepted by t
 * Simple exit;
 * Exit with copy: a directory is created, of a **core** file that contains a copy of its memory space (and for this reason it is called **core dump**) which can be used for further analysis to see where the interruption occurred.
 
+Finally, some signals (such as **SIGCHLD**, the one used to notify the father of the termination of a child) are ignored by default, the program therefore continues without any consequence.
+
+Signals that produce a simple output are **SIGTERM** (default) and **SIGINT** (associated with the interrupt character given by the keyboard), a signal that produces a core dump is **SIGQUIT** (like all signals related to programming errors **SIGSEGV**, **SIGFPE**, etc ... .). The **SIGSTOP** and **SIGTSTP** signals block the process by sending it into a state of T.
+
+The **kill** command allows you to send a signal to a process, giving the PID as a parameter. To send a signal other than the **SIGTERM** you must specify the name or number of the signal preceded by "**-**". For a full description see **man kill**.
+
+An alternative command to **kill** is **killall** which, instead of asking for the PID of a process, works by entering the program name.
+
+Main options of the **killall** command:
+* -g: sends the signal to the process group of the process;
+* -e: requires an exact match even for very long names;
+* -i: asks for an interactive confirmation before sending the signal;
+* -l: print the list of signal names;
+* -u user: sends the signal to the specified user processes;
+* -w: waits for all processes to which it sent the signal to terminate.
+
 WORK IN PROGRESS
